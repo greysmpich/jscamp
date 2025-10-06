@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="description" content="Encuentra las mejores ofertas de trabajo para desarrolladores en DevJobs.">
 
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
@@ -14,8 +14,8 @@
     <h1>DevJobs</h1>
 
     <nav>
-      <a href="">Inicio</a>
-      <a href="">Empleos</a>
+      <a href="index.html">Inicio</a>
+      <a href="empleos.html">Empleos</a>
     </nav>
 
     <div>
@@ -26,14 +26,15 @@
 
   <main>
     <section>
-      <img src="./background.webp" width="200" />
+      <img src="assets/images/background.webp" width="200" />
 
       <h1>Encuentra el trabajo de tus sueños</h1>
 
       <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad.</p>
 
       <form role="search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
           class="icon icon-tabler icons-tabler-outline icon-tabler-search">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -44,7 +45,33 @@
         <input required type="text" placeholder="Buscar empleos por título, habilidad o empresa">
 
         <button type="submit">Buscar</button>
+        </div>
       </form>
+    </section>
+
+    <section>
+
+      <header>
+        <h2>Categorías de empleo populares</h2>
+      </header>
+      <div>
+        <div class="categoria-popular">
+          Desarrollo web
+        </div>
+        <div class="categoria-popular">
+          Desarrollo móvil
+        </div>
+        <div class="categoria-popular">
+          Ciencia de datos
+        </div>
+        <div class="categoria-popular">
+          Ingeniería de software
+        </div>
+        <div class="categoria-popular">
+         DevOps
+        </div>
+      </div>
+
     </section>
 
     <section>
