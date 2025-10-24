@@ -234,6 +234,7 @@ form>div:nth-child(2) {
   margin-top: .5rem;
   padding: 0.5rem 0;
 
+
   select {
     background-color: var(--input-bg);
     border-radius: 0.5rem;
@@ -243,15 +244,15 @@ form>div:nth-child(2) {
     padding: 10px;
     box-shadow: 0 5px 10px -3px var(--shadow);
 
-     &:hover {
-    background-color: var(--primary-hover);
-    color: white;
-  }
+    &:hover {
+      background-color: var(--primary-hover);
+      color: white;
+    }
 
-  &:focus {
-    outline: 2px solid #1173d4;
-    outline-offset: 2px;
-  }
+    &:focus {
+      outline: 2px solid #1173d4;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -311,6 +312,10 @@ main>section:nth-child(2) {
     h2 {
       margin-bottom: 0.5rem;
       font-size: 2rem;
+    }
+
+    .resultados-conteo {
+      margin-bottom: .5rem;
     }
 
   }
@@ -519,8 +524,12 @@ article {
 
 
 /* Estilo para la página activa */
-.page-item.active .page-link,
-.page-item:hover .page-link {
+.page-item {
+  margin: .2rem;
+}
+
+.page-item.active,
+.page-item:hover {
   background-color: var(--primary-light);
   color: white;
   border-color: var(--primary-light);
@@ -557,6 +566,7 @@ article {
     a {
       color: var(--primary-light);
     }
+
     &::before {
       padding: 0 .5rem;
       color: var(--primary-dark);
@@ -576,7 +586,7 @@ article {
 }
 
 .detalle-empleo>section:nth-child(1) {
-   h1 {
+  h1 {
     margin-bottom: 5rem;
-   }
+  }
 }

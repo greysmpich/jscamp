@@ -102,7 +102,7 @@
     "ubicacion": "Valencia",
     "descripcion": "Buscamos un desarrollador frontend con experiencia en React, TypeScript y Tailwind CSS. Se valorará conocimiento en optimización de rendimiento y accesibilidad web.",
     "data": {
-      "tecnologia": "react",
+      "tecnologia": "react,typescript",
       "ubicacion": "valencia",
       "experiencia": "mid-level"
     }
