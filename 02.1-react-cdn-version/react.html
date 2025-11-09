@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>React con JSX</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Listado con empleos y filtros para encontrar el trabajo de tus sueños.">
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script type="module">
+        import React from "https://esm.sh/react?dev";
+        import ReactDOM from "https://esm.sh/react-dom/client?dev";
+        window.React = React;
+        window.ReactDOMClient = ReactDOM;
+
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //componente de React
+        function JobCard({ data, titulo, empresa, ubicacion, descripcion }) {
+
+            const [isAplied, setIsApplied] = React.useState(false);
+            const handleAplicar = () => {
+                setIsApplied(!isAplied)
+            }
+
+            const text = isAplied ? 'Aplicado' : 'Aplicar';
+            const buttonClass = isAplied ? 'is-applied' : '';
+
+            return (
+                <article className="job-listing-card"
+                    data-modalidad={data?.modalidad}
+                    data-experiencia={data?.experiencia}
+                    data-tecnologia={data?.tecnologia}
+                >
+                    <div>
+                        <h3 className="titulo-vacante">
+                            {titulo}
+                        </h3>
+                        <span> {empresa} - {ubicacion}</span>
+                        <p>{descripcion}</p>
+                    </div>
+                    <div>
+                        <button 
+                        disabled={isAplied}
+                        className={`button-apply-job ${buttonClass}`}
+                            onClick={handleAplicar}
+                        >
+                            {text}</button>
+                    </div>
+                </article>
+            )
+        }
+
+        function App() {
+            // Array de empleos
+            const empleos = [
+                {
+                    id: 1,
+                    titulo: 'Desarrollador Frontend',
+                    empresa: 'Tech Solutions Inc.',
+                    ubicacion: 'Remoto',
+                    descripcion: 'Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y nodejs.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.',
+                    data: {
+                        modalidad: 'remoto',
+                        experiencia: 'junior',
+                        tecnologia: 'react',
+                    }
+                },
+                {
+                    id: 2,
+                    titulo: 'Ingeniero Backend',
+                    empresa: 'Data Systems',
+                    ubicacion: 'Madrid',
+                    descripcion: 'Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.',
+                    data: {
+                        modalidad: 'presencial',
+                        experiencia: 'senior',
+                        tecnologia: 'nodejs',
+                    }
+                },
+                {
+                    id: 3,
+                    titulo: 'Full Stack Developer',
+                    empresa: 'StartupCo',
+                    ubicacion: 'Barcelona',
+                    descripcion: 'Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.',
+                    data: {
+                        modalidad: 'hibrido',
+                        experiencia: 'mid-level',
+                        tecnologia: 'react',
+                    }
+                },
+            ]
+            return (
+
+                <>
+                    <JobCard
+                        titulo={empleos[0].titulo}
+                        empresa={empleos[0].empresa}
+                        ubicacion={empleos[0].ubicacion}
+                        descripcion={empleos[0].descripcion}
+                    />
+                    <JobCard
+                        titulo={empleos[1].titulo}
+                        empresa={empleos[1].empresa}
+                        ubicacion={empleos[1].ubicacion}
+                        descripcion={empleos[1].descripcion}
+                    />
+                    <JobCard
+                        titulo={empleos[2].titulo}
+                        empresa={empleos[2].empresa}
+                        ubicacion={empleos[2].ubicacion}
+                        descripcion={empleos[2].descripcion}
+                    />
+                </>
+            )
+        }
+
+        window.onload = () => {
+            const rootEl = document.querySelector('#react-root')
+            const root = ReactDOMClient.createRoot(rootEl)
+            root.render(< App />)
+        }
+    </script>
+</head>
+
+<body class="empleos">
+    <header>
+        <h1>
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            DevJobs
+        </h1>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="empleos.html">Empleos</a>
+        </nav>
+
+        <div>
+            <a href="">Subir CV</a>
+            <!-- <a href=""><img src="assets/images/user.webp" alt="user" title="user"></a> -->
+            <dev-jobs-avatar></dev-jobs-avatar>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+
+            <h1>React.js, primeros pasos</h1>
+
+
+
+        </section>
+
+        <section>
+            <header class="job-listings-header">
+                <h2>Resultados de búsqueda</h2>
+            </header>
+            <div id="react-root" class="jobs-listings"></div>
+        </section>
+
+        <section>
+
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2025 DevJobs. Todos los derechos reservados | Grecia Mendieta 'greysmpich'.</small>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer style="padding-bottom: 100000px">
+
+    </footer>
+</body>
+
+
+
+</html>
