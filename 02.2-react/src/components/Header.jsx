@@ -1,3 +1,5 @@
+import { Link } from "./Link";
+
 export function Header() {
     return (
         <header>
@@ -11,8 +13,8 @@ export function Header() {
             </h1>
 
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="empleos.html">Empleos</a>
+                <Link href="/" className="nav-item">Inicio</Link>
+                <Link href="/search" className="nav-item">Empleos</Link>
             </nav>
 
             <div>
